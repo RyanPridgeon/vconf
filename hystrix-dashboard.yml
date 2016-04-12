@@ -1,0 +1,21 @@
+info:
+  component: Hystrix Dashboard
+  
+server:
+  port: 8681
+
+spring:
+  rabbitmq:
+    addresses: ${rabbitmqHost:rabbitmq}:${rabbitmqPort:5672}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
