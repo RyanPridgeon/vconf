@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+
+memcached:
+  addresses: localhost:11211
+
+server:
+  servlet-path: /management
+  port: ${port:6060}
+
+address:
+  lookup:
+    parallelism: 15
+  callers:
+    qas:
+      primary:
+        endpoint: http://localhost:9000/queryAddressFinder
+      secondary:
+        endpoint: http://localhost:9000/queryAddressFinder
+  
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
