@@ -1,0 +1,16 @@
+server:
+  port: ${port:8761}
+
+management:
+  port: ${port:8861}
+    
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  instance:
+    hostname: localhost
+
+spring:
+  rabbitmq:
+    addresses: localhost:5672
