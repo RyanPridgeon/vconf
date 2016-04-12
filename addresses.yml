@@ -1,6 +1,6 @@
 spring:
   rabbitmq:
-    addresses: localhost:5672
+    addresses: rabbitmq:5672
 
 memcached:
   addresses: localhost:11211
