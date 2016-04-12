@@ -1,0 +1,29 @@
+info:
+  component: Turbine
+
+turbine:
+  appConfig: zuul-server,addresses
+  clusterNameExpression: new String("default")
+  
+server:
+  port: 8989
+
+management:
+  port: 8990
+
+spring:
+  rabbitmq:
+    addresses: ${rabbitmqHost:rabbitmq}:${rabbitmqPort:5672}
+
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'OFF'
