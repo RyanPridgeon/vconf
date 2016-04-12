@@ -1,0 +1,7 @@
+optilead:
+ username: CentNCCB
+ password: CentNCCB
+ endpoint: http://localhost:9000
+ 
+server:
+  port: ${port:9090} 
