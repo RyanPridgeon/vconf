@@ -14,3 +14,9 @@ eureka:
 spring:
   rabbitmq:
     addresses: rabbitmq:5672
+
+logging:
+  level:
+    org.springframework:
+      cloud: 'DEBUG'
+      web: 'DEBUG'
