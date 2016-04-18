@@ -6,7 +6,7 @@ memcached:
   addresses: localhost:11211
 
 server:
-  host: localhost
+  host: 127.0.0.1
   servlet-path: /management
   port: ${port:6060}
 
