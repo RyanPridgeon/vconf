@@ -25,4 +25,4 @@ eureka:
 logging:
   level:
     org.springframework.web: 'DEBUG'
-  project.user.UserClient: 'BASIC'
+    project.user.UserClient: 'BASIC'
