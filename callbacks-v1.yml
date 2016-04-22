@@ -1,6 +1,6 @@
 spring:
   rabbitmq:
-    addresses: localhost:15672
+    addresses: localhost:5672
 
 optilead:
   username: '{cipher}AQAz6jHRUMSolFJFoBp6y5kfaRvC0Lklc0SiTmjZxZ0/tOwEfiNWX8kZuNGmnBFrUT/UjzQ37tqXWpIMvrt2Fhj/RuJDxNqrXkg4eODaukBdwpI7AKYiev2UN6A8ZlOGtO3GG445rAESHTqSpGKfRAMkcmc3UyuI1k2fJAojx5vjRgCp/ec3JXbAX2vsxD5glCR2ogeIRJby97uY9fxi5a1EOPn5LeGRArtWPEgiiLpet74pmMW7N7iiK1mpe9sDF2MC2gcNw20MczLXOyMT1GGPhl+aSW+NDTQ3sm5FmK6yADpopSRHQctkihk/tBfjpw+ZBwaxVS+wCGYfmDlWe6BqF+RJVmx0vl4XzO8CaAUw1G8NRSP5LxxOY1mldxmvv5DZSqQakGDVOdov5H1Qh00i'
