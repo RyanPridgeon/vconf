@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+
+redis:
+  host: localhost
+  port: 6379
+ 
+ribbon:
+  eureka:
+   enabled: false
+
+cqRepository:
+  ribbon:
+    listOfServers: 10.224.70.15:9001
+
+server:
+  servlet-path: /management
+  port: ${port:6070} 
+
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+logging:
+  level:
+    org.springframework.web: 'DEBUG'
+    project.user.UserClient: 'BASIC'
