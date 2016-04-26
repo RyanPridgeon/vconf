@@ -16,7 +16,7 @@ cqRepository:
 
 server:
   servlet-path: /management
-  port: ${port:6070} 
+  port: ${port:9091} 
 
 eureka:
   instance:
