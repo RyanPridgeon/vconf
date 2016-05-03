@@ -32,46 +32,7 @@ spring:
 logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
----
-spring:
-  profiles: instance-1
 
 server:
-  port: ${port:8771}
-
-management:
-  port: 8871
-  
-eureka:
-  instance:
-    hostname: 127.0.0.1
-    metadata-map:
-      instanceId: 1
----
-spring:
-  profiles: instance-2
-  
-server:
-  port: ${port:8773}
-
-management:
-  port: 8873
-    
-eureka:
-  instance:
-    metadata-map:
-      instanceId: 2
----
-spring:
-  profiles: instance-3
-  
-server:
-  port: ${port:8775}
-
-management:
-  port: 8875
-    
-eureka:
-  instance:
-    metadata-map:
-      instanceId: 3
+  servlet-path: /management
+  port: ${port:9090} 
