@@ -35,4 +35,4 @@ logging:
 
 server:
   servlet-path: /management
-  port: ${port:9090} 
+  port: ${port:8771} 
