@@ -6,7 +6,7 @@ zuul:
   routes:
     addresses: 
       path: /addresses/**
-    callbacks:
+    callbacks-v1:
       path: /callbacks/**
   cors:
     /*:
