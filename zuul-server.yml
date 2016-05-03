@@ -34,5 +34,4 @@ logging:
     root: INFO
 
 server:
-  servlet-path: /management
   port: ${port:8771} 
