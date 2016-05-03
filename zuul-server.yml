@@ -6,6 +6,8 @@ zuul:
   routes:
     addresses: 
       path: /addresses/**
+    callbacks:
+      path: /callbacks/**
   cors:
     /*:
       allowedOrigins:
