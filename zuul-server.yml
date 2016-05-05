@@ -33,7 +33,7 @@ spring:
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
 
 server:
   port: ${port:8771} 
