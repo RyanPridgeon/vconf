@@ -34,6 +34,8 @@ spring:
 logging:
   level:
     root: INFO
+    org.springframework.web: INFO
+    info.tcb: DEBUG
 
 server:
   port: ${port:8771} 
