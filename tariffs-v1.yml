@@ -12,7 +12,7 @@ ribbon:
 
 cqRepository:
   ribbon:
-    listOfServers: localhost:9002
+    listOfServers: 10.224.70.15:9001
 
 server:
   servlet-path: /management
