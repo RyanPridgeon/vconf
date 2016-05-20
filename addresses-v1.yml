@@ -16,9 +16,9 @@ address:
   callers:
     qas:
       primary:
-        endpoint: http://localhost:9000/queryAddressFinder
+        endpoint: http://localhost:9000
       secondary:
-        endpoint: http://localhost:9000/queryAddressFinder
+        endpoint: http://localhost:9000
   
 eureka:
   instance:
