@@ -5,7 +5,7 @@ spring:
 optilead:
   username: '{cipher}AQAIyOSDmWmWAWdNBs+zHzWODpFTnzdeI4RlK92BZmpIZpa2IiiWyvzdel3TaX3g05V+wqIAUlh0GnGANokYZkGmKcjGKSsoLgsi8amrQV7+q6aoSU7pAuhp+hm6L7+UeVd0U14Ohy/yADSuVgLpxiSFDvBu6t0R+G4fpbjI4Qdx7DcXr1B5H1pAOzgLX9FvJw3IVhKPWIHjeGWm5yN6v/4lTqwF3pCAmqgBDI/VRGWxmaae+WJlC8kGaY9WaYYDTddljgpv18eRPUodk/RE0Wf8GUy57CYCB8GL5oloyFIGGhdjiLc9BVhcXWcV+Bkrqn6UA74BqtZFt4aUANQOV5tZ9nmOOPf7FMyfIHAmxX9SOcHomtTHPC4k6eoI3oQyldA='
   password: '{cipher}AQAIyOSDmWmWAWdNBs+zHzWODpFTnzdeI4RlK92BZmpIZpa2IiiWyvzdel3TaX3g05V+wqIAUlh0GnGANokYZkGmKcjGKSsoLgsi8amrQV7+q6aoSU7pAuhp+hm6L7+UeVd0U14Ohy/yADSuVgLpxiSFDvBu6t0R+G4fpbjI4Qdx7DcXr1B5H1pAOzgLX9FvJw3IVhKPWIHjeGWm5yN6v/4lTqwF3pCAmqgBDI/VRGWxmaae+WJlC8kGaY9WaYYDTddljgpv18eRPUodk/RE0Wf8GUy57CYCB8GL5oloyFIGGhdjiLc9BVhcXWcV+Bkrqn6UA74BqtZFt4aUANQOV5tZ9nmOOPf7FMyfIHAmxX9SOcHomtTHPC4k6eoI3oQyldA='
-  endpoint: https://secure.optilead.co.uk
+  endpoint: http://localhost:9000
  
 server:
   servlet-path: /management
