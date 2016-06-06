@@ -1,1 +1,11 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672
 
+ribbon:
+  eureka:
+   enabled: false
+
+cqEmailTemplateRepository:
+  ribbon:
+    listOfServers: 10.224.70.15:9001
