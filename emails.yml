@@ -21,6 +21,9 @@ spring:
           destination: emails
         output:
           destination: emails
+  mail:
+    host:${smtp.host:localhost}
+    port:${smtp.port:25}
 
 ribbon:
   eureka:
