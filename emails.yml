@@ -13,6 +13,14 @@ spring:
     sentinel:
       master: mymaster
       nodes: localhost:26379
+  cloud:
+    stream:
+      bindings:
+        input:
+          group: email-service
+          destination: emails
+        output:
+          destination: emails
 
 ribbon:
   eureka:
