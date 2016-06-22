@@ -48,17 +48,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
 
-feign:
-  histrix:
-    enabled: false
-
 hystrix:
   command:
-    choose:
-      default:
-        execution:
-          timeout:
-            enabled: false
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
 
 logging:
   pattern:
