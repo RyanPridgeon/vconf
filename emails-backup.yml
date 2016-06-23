@@ -1,0 +1,67 @@
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@10.224.70.16:1525:DVSOL1_1}
+    username: ${jdbc.username:ol_master}
+    password: ${jdbc.password:ROLE_MASTER}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
+  rabbitmq:
+    addresses: localhost:5672
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: localhost:26379
+  cloud:
+    stream:
+      bindings:
+        input:
+          group: email-service
+          destination: emails
+        output:
+          destination: emails
+  mail:
+    host: ${smtp.host:localhost}
+    port: ${smtp.port:25}
+    smtp:
+      starttls:
+        enable: true
+
+ribbon:
+  eureka:
+   enabled: false
+
+cqEmailTemplateRepository:
+  ribbon:
+    listOfServers: 10.224.70.15:9001
+
+server:
+  servlet-path: /management
+  port: ${port:7071}
+
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
+  level:
+    uk.co.britishgas.api.core.emails.services: 'DEBUG'
