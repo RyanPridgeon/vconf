@@ -24,6 +24,9 @@ spring:
   mail:
     host: ${smtp.host:localhost}
     port: ${smtp.port:25}
+    smtp:
+      starttls:
+        enable: true
 
 ribbon:
   eureka:
