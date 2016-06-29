@@ -1,9 +1,9 @@
 spring:
   datasource:
-    driverClassName: oracle.jdbc.driver.OracleDriver
-    url: ${jdbc.url:jdbc:oracle:thin:@10.224.70.16:1525:DVSOL1_1}
-    username: ${jdbc.username:ol_master}
-    password: ${jdbc.password:ROLE_MASTER}
+    driverClassName: org.h2.Driver
+    url: ${jdbc.url:jdbc:h2:mem:test;DB_CLOSE_DELAY=-1}
+    username: ${jdbc.username:}
+    password: ${jdbc.password:}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     maxWait: 1000
