@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: org.h2.Driver
-    url: ${jdbc.url:jdbc:h2:tcp//localhost:1572/mem/email;DB_CLOSE_DELAY=-1;IFEXISTS=TRUE;}
+    url: ${jdbc.url:jdbc:h2:tcp://localhost:1572/mem:email;IFEXISTS=TRUE;}
     username: ${jdbc.username:}
     password: ${jdbc.password:}
     testOnBorrow: true
