@@ -5,7 +5,7 @@ spring:
     sentinel:
       master: mymaster
       nodes: localhost:26379
- 
+
 ribbon:
   eureka:
    enabled: false
@@ -13,23 +13,32 @@ ribbon:
 cqRepository:
   ribbon:
     listOfServers: 10.224.70.15:9001
+    #listOfServers: 10.224.70.74:9001
 
 server:
+  port: ${port:9080}
   servlet-path: /management
-  port: ${port:9091} 
-
+  
 eureka:
   instance:
-    statusPageUrlPath: ${server.servlet-path}/info
-    healthCheckUrlPath: ${server.servlet-path}/health
+    metadata-map:
+      instanceId: 1
   client:
-    healthcheck:
-      enabled: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
+
 logging:
   level:
-    org.springframework.web: 'DEBUG'
-    project.user.UserClient: 'BASIC'
+    com.netflix.discovery: 'INFO'
+    org.springframework.cloud: 'DEBUG'
+    feign: 'DEBUG'
