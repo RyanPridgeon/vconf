@@ -44,3 +44,9 @@ logging:
     org.springframework.cloud: 'DEBUG'
     feign: 'DEBUG'
     root: 'DEBUG'
+  appender:
+    root:
+      file: org.apache.log4j.RollingFileAppender
+        File: mylogs.log
+      layout: org.apache.log4j.PatternLayout
+        ConversionPattern: %d{dd-MM-yyyy HH:mm:ss} %-5p %c{1}:%L - %m%n
