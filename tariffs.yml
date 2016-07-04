@@ -43,3 +43,4 @@ logging:
     com.netflix.discovery: 'DEBUG'
     org.springframework.cloud: 'DEBUG'
     feign: 'DEBUG'
+    root: 'DEBUG'
