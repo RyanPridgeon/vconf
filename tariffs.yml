@@ -40,8 +40,8 @@ hystrix:
 
 logging:
   level:
-    com.netflix.discovery: 'DEBUG'
-    org.springframework.cloud: 'DEBUG'
-    feign: 'DEBUG'
-    root: 'DEBUG'
+    com.netflix.discovery: 'INFO'
+    org.springframework.cloud: 'INFO'
+    feign: 'INFO'
+    root: 'INFO'
   file: '/Users/Admin/work/projects/micro-services/tariff_log.log'
