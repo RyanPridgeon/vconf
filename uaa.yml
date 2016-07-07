@@ -36,6 +36,10 @@ encryption:
   AES:
     cbc-iv: ${aes.iv}
     seed: ${aes.seed}
+    
+services:
+  emails: emails
+  audits: audits
 
 server:
   ssl:
