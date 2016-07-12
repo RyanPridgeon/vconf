@@ -4,8 +4,8 @@ info:
 zuul:
   ignoredServices: '*'
   routes:
-    addresses: 
-      path: /addresses/**
+    addresses-v1:
+      path: /v1/addresses/**
     callbacks:
       path: /callbacks/**
   cors:
