@@ -2,8 +2,8 @@ spring:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
     url: ${jdbc.url:jdbc:oracle:thin:@10.224.70.16:1525:DVSOL1_1}
-    username: ${jdbc.username:ol_master}
-    password: ${jdbc.password:ROLE_MASTER}
+    username: ${jdbc.username:invalid}
+    password: ${jdbc.password:invalid}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     maxWait: 1000
@@ -62,3 +62,16 @@ logging:
     root: INFO
     org.springframework.ws.client.MessageTracing.sent: 'TRACE'
     org.springframework.ws.client.MessageTracing.received: 'TRACE'
+    
+---
+
+spring:
+  profiles: unit-test
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@10.224.70.16:1525:DVSOL1_1}
+    username: ${jdbc.username:ol_master}
+    password: ${jdbc.password:ROLE_MASTER}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
