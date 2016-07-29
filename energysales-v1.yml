@@ -66,7 +66,7 @@ logging:
 ---
 
 spring:
-  profiles: unit-test
+  profiles: integration-test
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
     url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
