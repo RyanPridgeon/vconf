@@ -3,7 +3,7 @@ spring:
     addresses: localhost:5672
     
 memcached:
-  addresses: localhost:32770
+  addresses: localhost:11211
 
 server:
   port: ${port:9060}
