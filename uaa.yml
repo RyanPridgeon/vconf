@@ -16,6 +16,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        
+cqServerUrl: https://10.224.70.15
   
 eureka:
   instance:
