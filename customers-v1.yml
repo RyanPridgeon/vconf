@@ -12,8 +12,6 @@ memcached:
 server:
   port: ${port:9060}
   servlet-path: /management
-  
-cqServerUrl: https://10.224.70.15
 
 management:
   port: 9160
