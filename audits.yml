@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: ${jdbc.url:jdbc:oracle:thin:@localhost:1521:xe}
-    username: ${jdbc.username:ol_master}
-    password: ${jdbc.password:password12}
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     maxWait: 1000
