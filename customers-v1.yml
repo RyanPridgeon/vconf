@@ -31,8 +31,8 @@ customer:
       expiry: 3600
       
 services:
-  emails: http://localhost:9999/emails
-  audits: http://localhost:9999/audits      
+  emails: emails
+  audits: audits      
 
 webservice:
   authentication:
