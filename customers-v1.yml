@@ -23,7 +23,7 @@ customer:
       expiry: 3600
   ucrn:
     caller:
-      endpoint: http://tpicxtmqa.uk.centricaplc.com:50000/XISOAPAdapter/MessageServlet?senderParty=&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=PartyManagementCustomerIdentity24x7&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3AParty
+      endpoint: http://localhost:9999/getucrn
       expiry: 3600
   change:
     caller:
