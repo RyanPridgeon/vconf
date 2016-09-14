@@ -27,7 +27,7 @@ customer:
       expiry: 3600
   change:
     caller:
-      endpoint: http://tpicxtmqa.uk.centricaplc.com:50000/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=ManageOnlineCustomer&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3AParty
+      endpoint: http://localhost:9999/updatecustomerdetails
       expiry: 3600
       
 services:
