@@ -1,14 +1,19 @@
 spring:
   rabbitmq:
     addresses: localhost:5672
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: localhost:26379
 
 memcached:
   addresses: localhost:11211
 
 server:
-  host: 127.0.0.1
   servlet-path: /management
-  port: ${port:6060}
+  error:
+    whitelabel:
+      enabled: false
 
 address:
   lookup:
@@ -28,7 +33,37 @@ eureka:
 logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
-  level:
-    org.springframework:
-      cloud: 'DEBUG'
-      web: 'DEBUG'
+---
+spring:
+  profiles: instance-1
+
+server:
+  port: ${port:9010}
+  
+eureka:
+  instance:
+    metadata-map:
+      instanceId: 1
+---
+spring:
+  profiles: instance-2
+  
+server:
+  port: ${port:9011}
+  
+    
+eureka:
+  instance:
+    metadata-map:
+      instanceId: 2
+---
+spring:
+  profiles: instance-3
+  
+server:
+  port: ${port:9012}
+    
+eureka:
+  instance:
+    metadata-map:
+      instanceId: 3
