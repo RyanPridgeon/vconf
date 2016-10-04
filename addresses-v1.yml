@@ -15,6 +15,10 @@ server:
   error:
     whitelabel:
       enabled: false
+      
+services:
+  emails: emails
+  audits: audits 
 
 address:
   lookup:
