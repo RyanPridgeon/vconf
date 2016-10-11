@@ -12,6 +12,7 @@ memcached:
 
 server:
   servlet-path: /management
+  port: 9040
 
 management:
   port: 9140
@@ -69,46 +70,3 @@ logging:
     root: DEBUG
     org.springframework.ws.client.MessageTracing.sent: 'TRACE'
     org.springframework.ws.client.MessageTracing.received: 'TRACE'
----
-spring:
-  profiles: instance-1
-
-server:
-  port: ${port:9030}
-
-management:
-  port: 9130
-
-eureka:
-  instance:
-    metadata-map:
-      instanceId: 1
---- 
-spring:
-  profiles: instance-2
-
-server:
-  port: ${port:9031}
-
-management:
-  port: 9131
-
-
-eureka:
-  instance:
-    metadata-map:
-      instanceId: 2
----
-spring:
-  profiles: instance-3
-
-server:
-  port: ${port:9032}
-
-management:
-  port: 9132
-
-eureka:
-  instance:
-    metadata-map:
-      instanceId: 3
