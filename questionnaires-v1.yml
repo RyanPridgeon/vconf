@@ -43,8 +43,8 @@ ribbon:
 
 encryption:
   AES:
-    cbc-iv: '{cipher}AQAKU4wwwws/qYGn/MwCd/PQnLB4lJRznxMLuqMhC/kIEI20X0yWVTHAEC/6GQ9lo+DIThnEXcXhEgyPuad5VGJsaXAC5/iDjk3FS+mzcY9FQKSvEGuO28GuHYoX2TVvZern6H221IArmhm5UQQqVcn0599dvjx+6nrvui++mbFG8HmsoiEO0TsrgvIiBEXhcBo3yO5yRPRRpWP/O/ddf1snFfCFGvlGvIKdOHyT24tfUjOVr8NFam85+rMLLGuF4b6rENeG+7+fXmnmLRr/o5F51GskpHsTeM+Ck+0ChnpLYj/tHMkhK45z4SLWvWohqKmD18TsI6U1639J3fcAik+Z7dZHL6pW+WccgJpGQIOO7wSvZLOHYiXIkXXI5n+Y4WMs0Y19hTvkYaaU+5Jw+r/B'
-    seed: '{cipher}AQBrOvQBzxAYqcd3qR+kOav5hi7W0ITVUZAP4HcmuC8cZR26YawdWNSZxrJz8DYgTUzmgeuEmV2nJr07GltNal/hpOtz+mKUEfwxKuREOWBeDl9POCPrOgU8yt09S2qhSFkHwwfdhFVddULwjJmZxzfvzCF8SHG8/qI7YwpEg+gzT83WAxyY98leVyq+o/IrFXgD7qY2ZfPCFVWOvj/MMKoXPXyg/UMNVwiFDdzYYzPy6upGeOkU3l7/vYlGJdifFihqw3+Q3qm3yoUrhcgJOAdssidd0ZW2zPDrY2fdXZuqvY3jZf/mu7sNQJ4EuVTHcB/wOfuIQqGFlU1D+yHS9kiskpKtyTHUtRFip0XHKVw9QvKzVjAtrXCyVHZCn4UbLvE='
+    cbc-iv: ${aes.iv}
+    seed: ${aes.seed}
    
 eureka:
   instance:
