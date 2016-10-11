@@ -22,12 +22,12 @@ cqServerUrl: https://localhost
 smart:
   survey:
     caller:
-      endpoint: http://10.224.70.15/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=SmartMeterProcessingReadLeadOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3ASmartMeterProcessing
+      endpoint: http://193.67.163.110/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=SmartMeterProcessingReadLeadOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3ASmartMeterProcessing
       expiry: 3600
       
   updatesurvey:
     caller:
-      endpoint: http://10.224.70.15/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=SmartMeterProcessingActionMeterOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3ASmartMeterProcessing
+      endpoint: http://193.67.163.110/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=SmartMeterProcessingActionMeterOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3ASmartMeterProcessing
       expiry: 3600
 
 webservice:
