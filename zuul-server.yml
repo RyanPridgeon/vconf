@@ -5,8 +5,11 @@ zuul:
   ignoredServices: '*'
   routes:
     questionnaires-v1:
-      path: /v1/questionnaires/**
-      prefix: /v1
+      path: /v1/questions/**
+      stripPrefix: false
+    questionnaires-v1-surveys:
+      path: /v1/surveys/**
+      serviceId: questionnaires-v1
       stripPrefix: false
     addresses-v1:
       path: /v1/addresses/**
