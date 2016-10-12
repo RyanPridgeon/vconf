@@ -4,6 +4,9 @@ info:
 zuul:
   ignoredServices: '*'
   routes:
+    questionnaires-v1:
+      path: /v1/questionnaires/**
+      stripPrefix: false
     addresses-v1:
       path: /v1/addresses/**
       stripPrefix: false
