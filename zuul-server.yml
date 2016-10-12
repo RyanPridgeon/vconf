@@ -6,6 +6,7 @@ zuul:
   routes:
     questionnaires-v1:
       path: /v1/questionnaires/**
+      prefix: /v1
       stripPrefix: false
     addresses-v1:
       path: /v1/addresses/**
