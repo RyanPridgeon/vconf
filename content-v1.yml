@@ -10,7 +10,8 @@ ribbon:
   eureka:
     enabled: false
 
-aemServerUrl: http://10.224.70.72:9001
+#aemServerUrl: http://10.224.70.72:9001
+aemServerUrl: http://localhost:9321
 
 server:
   port: ${port:9090}
