@@ -31,8 +31,7 @@ customer:
       expiry: 3600
       
 services:
-  emails: emails
-  audits: audits      
+  addresses: addresses-v1
 
 webservice:
   authentication:
