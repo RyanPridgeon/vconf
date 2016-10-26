@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: localhost:49161
-    username: system
-    password: oracle
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     tomcat:
