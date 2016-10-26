@@ -1,48 +1,58 @@
 spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: '{cipher}AQAgc72s8VraGpYu6VsfkKRTIo7RCxfIMdyHMYbpX7h/dsYT2BESLps0dMkPVjeyeZWoag5EobIYffv+58U5y7L8mi69yw/dw3t0wLG7abzIf2iJ2BIAxVPmauky1rkzMPE4hoXGrQ/kmlnHFBh6WY9jPbLSKLKdZzuWEnVXG0NsPSnCVl3X9HB8ObsffZsE1bf1OCLsFfsLq7/en/pRlJvrkuY/Fz6BkLkAec7xqX9Evxs9VxM4GqRX8s9zMNsGh3YeHi+h3YZAURdYV+ULCGY+e3U5AZQ5zkiZP6P3N4HO+e2TM8fGnDdtCqy4bG2vTOI2g9agiE222SUvPhU8mlDxuBzLwVgCUOBXK+y9eRyZu/kRSAMJgLURH+Yo6eyucPh2MxL9BRfEHKrdc3vc99tXv/X6lj98slyLhcBm7MUm9w=='
+    username: '{cipher}AQCTpt1MRM5hn6L8iR3ACUHus7otfTU+/AOpdr7lDoZ+poHG7JBE1KWqGI/mGGy383OsPUIh8zjLZx3NZjyj0zzyYMyfJSfG4HRTvhYFL4+YVkbEOKhwEIMW37uddYHDAvfVIsH44PGIzbl6uCLFqCnFHoquoCFv7pOFnwJC7f6LCmOADd41/tb9i/w7xkHopzMdImj9F6v4espRJ4eEJLhfE5o6OEC/onzRTZhcle1wepjVwQ8Z82PmDhZqiQ/V8HqaQv9SPFYn5hSTApn/LSow6UXzxGREavJRyzitr+eH5JvTbpj54NvUuBOBEAx3lMOXICK3eo4T0QWNWnAdN2ex1ih3ZkaU2gXDKWySWk7N9pCSTx44sMOk7ctE8LCJ9y0='
+    password: '{cipher}AQAtrSIEtiZAfzfDIv6SXZ0HCnBnKd3FuhprcACQeX+p2XYHS06EU8RK3Fgktsz01fasLkEw+gAly1/WnwmCReq8GGv2j/OKqntlVivAovRwYCuBRTnuDkY8hv9tf6e0XG4XKM9DJDYK0vkbQS2Fh2xsSo4AgRRTpRdROQ6LzHtXk9j3P2hRt0XSk3n+JCghu5l7s4mXsawyWeU+rIxEm8fAOna4qz149ho/V9Uzqb5tf/SBAMXvcvXsWZbH5gimyiokYkU1aKlfl9Oni4jBaYnwr7C6k2FIXqNnIg0At4EUQMbsj/rnlti4dS/nRmPhurcX8pGf9AlbTIacNYCLr8dc72zevea9qRNwEw2XKtyIFpqa7qvv0em/yXKiuRfcs5M='
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    tomcat:
+      maxActive: 50
+      maxIdle: 50
+      maxWait: 1000
   rabbitmq:
     addresses: localhost:5672
+    username: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
+    password: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
   redis:
     sentinel:
       master: mymaster
       nodes: localhost:26379
-    
-memcached:
-  addresses: localhost:11211
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
 server:
-  port: ${port:9060}
+  port: 9062
   servlet-path: /management
-
-management:
-  port: 9160
-
+  
+memcached:
+  addresses: localhost:22121
+  
 customer:
   info:
     caller:
-      endpoint: http://localhost:9999/getcustomerdetails
+      endpoint: http://10.114.69.15/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=PartyManagementManageCustomer24x7&interfaceNamespace=urn%3Abritishgas.co.uk%3AOnline%3AParty
       expiry: 3600
-  ucrn:
-    caller:
-      endpoint: http://localhost:9999/getucrn
-      expiry: 3600
-  change:
-    caller:
-      endpoint: http://localhost:9999/updatecustomerdetails
-      expiry: 3600
-      
-services:
-  addresses: addresses-v1
 
 webservice:
   authentication:
-    username: ONLSRVUSER
-    password: usatoday1
+    username: '{cipher}AQAwYIikDQ5MNTGuh9Pe6iOCzGTlYo7WosnOM++cV+n+KPUTyxdmO3HK+3DafiFWxB7xPKDaqqs1E0tOP+X9eeu7a08IUo9Mf3N2kZi7xwu0sF1KBhyoZ6fIs3+PT7tDnJ8ocbDoeGpNKEV9/xxkWO89fiEqvbwBH9EYgqmvurUFYJTYGK/uQ0w3wkjLTpa47kymMTmV4xg//LIRsrlrXVMx4QSYIjVGe+gn17HDaxw5wuHU52HVQonniDoUGeKKW13yOkNNOGJ8Irt4cInvzwTNHfgFXMkMqc5PW0ylBof3dKe1w3bmE1np+JTQ+2Npwwox5xoONDjbyR94P09uywXYFDr/7yyYN3bB/X9sI0bsjRwAiVHt6yEGaSeIk3EUkQo='
+    password: '{cipher}AQBEBucDfZV3FgLWXqMBbGv0Q7Jrw8Usm2SePIO8lJ1vwYHk0o3UHtrHuAG7+y6HL0RoeQtlXaXFHh/MSS7T4IXCc1t+SRQtquT8la1H5kQq/v70qNeAwH6Ef6Q1l6NvHZHSTK8mmo4TF1yOdQPYvd2V2P1JoO94frtlFm9kZ1emwBTCA14ylAkwl+9Kb8j1hKQNHvtSK17Wd6DZW1K4NSxH0Y3l+A1UNxYk9a9SFcEt7doteMnxyk1uQ9w4L3ZTbragCv3Mw8iFuzyD5MjJkBpPhoHsDJ/J+ZGZQ4nNIxWaFT2hq29AwoifVngpLoxkxI9Ke8XdzdqXjZmTl8Du2JWYqtoPyD3N1y/rQsIIATHldm4TwT3Apry/2xeiM0EwBJI='
 
+odata:
+  host: https://10.114.69.15/tngwntmqa
+  authorization: '{cipher}AQAIvnpLYkGIbZXZI3quRSWYL34k/RgKpAOCDRygukeGxMczIoFU7RrI3i1CRcg0zlaErvgugiiF3muul7SmQquYygdTXtUnQoV3Iu/HxZJFrUtKWRypoeDTTXptP3ayMk4IO87LgYGN17sXqXo1asjHqHicILH0jH5rrAt1uSpv8AblKo+nGM6Tz9DDgpuKgVOCkJ5ACXYUxw8Roz3bj/zgw+4MXJHfbgrRyssGJAfl3ePyexngxIZq8wjjvIeRrhszUpSSRQcuLPLgifXfgQVBdUpTkXE/fxywbfplO5bqAdcOpDwstjLlty4zGzNgJqsZw8U8gn2gSbk6OVxWwFbnHrlEliIiHpqCP7wRyQu79pOy4bkCTHYGhQGFwZK4PDLimt058Gi2GW4GTRjAxwCV'
+  
 eureka:
   instance:
-    metadata-map:
-      instanceId: 1
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
@@ -56,9 +66,10 @@ hystrix:
           thread:
             timeoutInMilliseconds: 30000
 
+services:
+  addresses: addresses-v1
+
 logging:
   level:
     org.springframework.ws.client.MessageTracing.sent: 'TRACE'
     org.springframework.ws.client.MessageTracing.received: 'TRACE'
-    com.netflix.discovery: 'INFO'
-    org.springframework.cloud: 'DEBUG'
