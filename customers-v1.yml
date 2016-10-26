@@ -12,8 +12,8 @@ spring:
       maxWait: 1000
   rabbitmq:
     addresses: localhost:5672
-    username: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
-    password: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
+    username: guest
+    password: guest
   redis:
     sentinel:
       master: mymaster
@@ -39,12 +39,12 @@ customer:
 
 webservice:
   authentication:
-    username: '{cipher}AQAwYIikDQ5MNTGuh9Pe6iOCzGTlYo7WosnOM++cV+n+KPUTyxdmO3HK+3DafiFWxB7xPKDaqqs1E0tOP+X9eeu7a08IUo9Mf3N2kZi7xwu0sF1KBhyoZ6fIs3+PT7tDnJ8ocbDoeGpNKEV9/xxkWO89fiEqvbwBH9EYgqmvurUFYJTYGK/uQ0w3wkjLTpa47kymMTmV4xg//LIRsrlrXVMx4QSYIjVGe+gn17HDaxw5wuHU52HVQonniDoUGeKKW13yOkNNOGJ8Irt4cInvzwTNHfgFXMkMqc5PW0ylBof3dKe1w3bmE1np+JTQ+2Npwwox5xoONDjbyR94P09uywXYFDr/7yyYN3bB/X9sI0bsjRwAiVHt6yEGaSeIk3EUkQo='
-    password: '{cipher}AQBEBucDfZV3FgLWXqMBbGv0Q7Jrw8Usm2SePIO8lJ1vwYHk0o3UHtrHuAG7+y6HL0RoeQtlXaXFHh/MSS7T4IXCc1t+SRQtquT8la1H5kQq/v70qNeAwH6Ef6Q1l6NvHZHSTK8mmo4TF1yOdQPYvd2V2P1JoO94frtlFm9kZ1emwBTCA14ylAkwl+9Kb8j1hKQNHvtSK17Wd6DZW1K4NSxH0Y3l+A1UNxYk9a9SFcEt7doteMnxyk1uQ9w4L3ZTbragCv3Mw8iFuzyD5MjJkBpPhoHsDJ/J+ZGZQ4nNIxWaFT2hq29AwoifVngpLoxkxI9Ke8XdzdqXjZmTl8Du2JWYqtoPyD3N1y/rQsIIATHldm4TwT3Apry/2xeiM0EwBJI='
+    username: guest
+    password: guest
 
 odata:
   host: https://10.114.69.15/tngwntmqa
-  authorization: '{cipher}AQAIvnpLYkGIbZXZI3quRSWYL34k/RgKpAOCDRygukeGxMczIoFU7RrI3i1CRcg0zlaErvgugiiF3muul7SmQquYygdTXtUnQoV3Iu/HxZJFrUtKWRypoeDTTXptP3ayMk4IO87LgYGN17sXqXo1asjHqHicILH0jH5rrAt1uSpv8AblKo+nGM6Tz9DDgpuKgVOCkJ5ACXYUxw8Roz3bj/zgw+4MXJHfbgrRyssGJAfl3ePyexngxIZq8wjjvIeRrhszUpSSRQcuLPLgifXfgQVBdUpTkXE/fxywbfplO5bqAdcOpDwstjLlty4zGzNgJqsZw8U8gn2gSbk6OVxWwFbnHrlEliIiHpqCP7wRyQu79pOy4bkCTHYGhQGFwZK4PDLimt058Gi2GW4GTRjAxwCV'
+  authorization: guest
   
 eureka:
   instance:
