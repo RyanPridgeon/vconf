@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: '{cipher}AQAgc72s8VraGpYu6VsfkKRTIo7RCxfIMdyHMYbpX7h/dsYT2BESLps0dMkPVjeyeZWoag5EobIYffv+58U5y7L8mi69yw/dw3t0wLG7abzIf2iJ2BIAxVPmauky1rkzMPE4hoXGrQ/kmlnHFBh6WY9jPbLSKLKdZzuWEnVXG0NsPSnCVl3X9HB8ObsffZsE1bf1OCLsFfsLq7/en/pRlJvrkuY/Fz6BkLkAec7xqX9Evxs9VxM4GqRX8s9zMNsGh3YeHi+h3YZAURdYV+ULCGY+e3U5AZQ5zkiZP6P3N4HO+e2TM8fGnDdtCqy4bG2vTOI2g9agiE222SUvPhU8mlDxuBzLwVgCUOBXK+y9eRyZu/kRSAMJgLURH+Yo6eyucPh2MxL9BRfEHKrdc3vc99tXv/X6lj98slyLhcBm7MUm9w=='
-    username: '{cipher}AQCTpt1MRM5hn6L8iR3ACUHus7otfTU+/AOpdr7lDoZ+poHG7JBE1KWqGI/mGGy383OsPUIh8zjLZx3NZjyj0zzyYMyfJSfG4HRTvhYFL4+YVkbEOKhwEIMW37uddYHDAvfVIsH44PGIzbl6uCLFqCnFHoquoCFv7pOFnwJC7f6LCmOADd41/tb9i/w7xkHopzMdImj9F6v4espRJ4eEJLhfE5o6OEC/onzRTZhcle1wepjVwQ8Z82PmDhZqiQ/V8HqaQv9SPFYn5hSTApn/LSow6UXzxGREavJRyzitr+eH5JvTbpj54NvUuBOBEAx3lMOXICK3eo4T0QWNWnAdN2ex1ih3ZkaU2gXDKWySWk7N9pCSTx44sMOk7ctE8LCJ9y0='
-    password: '{cipher}AQAtrSIEtiZAfzfDIv6SXZ0HCnBnKd3FuhprcACQeX+p2XYHS06EU8RK3Fgktsz01fasLkEw+gAly1/WnwmCReq8GGv2j/OKqntlVivAovRwYCuBRTnuDkY8hv9tf6e0XG4XKM9DJDYK0vkbQS2Fh2xsSo4AgRRTpRdROQ6LzHtXk9j3P2hRt0XSk3n+JCghu5l7s4mXsawyWeU+rIxEm8fAOna4qz149ho/V9Uzqb5tf/SBAMXvcvXsWZbH5gimyiokYkU1aKlfl9Oni4jBaYnwr7C6k2FIXqNnIg0At4EUQMbsj/rnlti4dS/nRmPhurcX8pGf9AlbTIacNYCLr8dc72zevea9qRNwEw2XKtyIFpqa7qvv0em/yXKiuRfcs5M='
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     tomcat:
