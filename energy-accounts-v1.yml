@@ -11,3 +11,7 @@ eureka:
 
 services:
   addresses: customers-v1
+
+energy.account.details.caller:
+  endpoint: http://localhost:50000
+  expiry: 3600
