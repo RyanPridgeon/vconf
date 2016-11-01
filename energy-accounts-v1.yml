@@ -1,3 +1,6 @@
+server:
+  port: 9230
+
 eureka:
   instance:
     statusPageUrlPath: ${server.servlet-path}/info
