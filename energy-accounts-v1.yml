@@ -1,6 +1,12 @@
 server:
   port: 9230
 
+spring:
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: localhost:26379
+      
 eureka:
   instance:
     statusPageUrlPath: ${server.servlet-path}/info
