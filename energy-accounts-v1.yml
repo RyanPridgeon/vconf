@@ -33,7 +33,7 @@ eureka:
     registry-fetch-interval-seconds: 5
 
 services:
-  addresses: customers-v1
+  customers: customers-v1
 
 energy.account.details.caller:
   endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=ManageAccountDetailsOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AONLINE%3A24X7Services
