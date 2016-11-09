@@ -2,6 +2,7 @@ server:
   port: 9543
 
 spring:
+  redis:
     sentinel:
       master: mymaster
       nodes: localhost:26379
