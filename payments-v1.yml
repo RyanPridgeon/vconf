@@ -1,0 +1,26 @@
+server:
+  port: 9543
+
+spring:
+    sentinel:
+      master: mymaster
+      nodes: localhost:26379
+      
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+services:
+  energy-accounts: energy-accounts-v1
+
+webservice:
+  authentication:
+    username: ONLSRVUSER
+    password: usatoday1
