@@ -27,5 +27,5 @@ webservice:
     password: usatoday1
 
 payments.financial.transactions.caller:
-  endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=ManageAccountDetailsOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AONLINE%3A24X7Services
+  endpoint: http://tpicxtmqa.uk.centricaplc.com:50000/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryCustomerAccount&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AFinancialTransaction
   expiry: 3600
