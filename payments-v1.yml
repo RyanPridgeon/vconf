@@ -29,3 +29,9 @@ webservice:
 payments.financial.transactions.caller:
   endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryCustomerAccount&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AFinancialTransaction
   expiry: 3600
+
+logging.level:
+  root: INFO
+  org.springframework.ws.client.MessageTracing.sent: TRACE
+  org.springframework.ws.client.MessageTracing.received: TRACE
+  org.springframework.ws.client.core: TRACE
