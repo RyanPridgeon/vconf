@@ -19,7 +19,7 @@ eureka:
     registry-fetch-interval-seconds: 5
 
 services:
-  energy-accounts: energy-accounts-v1
+  energyAccounts: energy-v1
 
 webservice:
   authentication:
