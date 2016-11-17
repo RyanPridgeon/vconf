@@ -29,3 +29,12 @@ webservice:
 payments.financial.transactions.caller:
   endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryCustomerAccount&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AFinancialTransaction
   expiry: 3600
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
