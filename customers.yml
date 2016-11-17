@@ -1,9 +1,23 @@
 spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:1521:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
   rabbitmq:
     addresses: localhost:5672
-    
-memcached:
-  addresses: 192.168.99.100:32770
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: localhost:26379
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
 server:
   port: ${port:9060}
@@ -22,7 +36,11 @@ webservice:
   authentication:
     username: ONLSRVUSER
     password: usatoday1
-
+    
+odata:
+  host: http://193.67.163.82/tngwntmqa
+  authorization: '{cipher}AQAIvnpLYkGIbZXZI3quRSWYL34k/RgKpAOCDRygukeGxMczIoFU7RrI3i1CRcg0zlaErvgugiiF3muul7SmQquYygdTXtUnQoV3Iu/HxZJFrUtKWRypoeDTTXptP3ayMk4IO87LgYGN17sXqXo1asjHqHicILH0jH5rrAt1uSpv8AblKo+nGM6Tz9DDgpuKgVOCkJ5ACXYUxw8Roz3bj/zgw+4MXJHfbgrRyssGJAfl3ePyexngxIZq8wjjvIeRrhszUpSSRQcuLPLgifXfgQVBdUpTkXE/fxywbfplO5bqAdcOpDwstjLlty4zGzNgJqsZw8U8gn2gSbk6OVxWwFbnHrlEliIiHpqCP7wRyQu79pOy4bkCTHYGhQGFwZK4PDLimt058Gi2GW4GTRjAxwCV'
+  
 eureka:
   instance:
     metadata-map:
@@ -43,7 +61,9 @@ hystrix:
 
 logging:
   level:
-    org.springframework.ws.client.MessageTracing.sent: 'TRACE'
-    org.springframework.ws.client.MessageTracing.received: 'TRACE'
-    com.netflix.discovery: 'INFO'
-    org.springframework.cloud: 'DEBUG'
+    org.spring: 'INFO'
+    org.apache: 'INFO'
+    ROOT: 'INFO'
+    
+services:
+  addresses: addresses-v1
