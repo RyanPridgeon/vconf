@@ -1,49 +1,52 @@
 spring:
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
-    url: ${jdbc.url:jdbc:oracle:thin:@10.224.70.16:1525:DVSOL1_1}
-    username: ${jdbc.username:ol_master}
-    password: ${jdbc.password:ROLE_MASTER}
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
     testOnBorrow: true
     validationQuery: SELECT 1 FROM DUAL
     maxWait: 1000
   rabbitmq:
     addresses: localhost:5672
+    username: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
+    password: '{cipher}AQCGA4Bf7t7XCrNzW0EcGHNmlEipv32uxr+o4oYLHWV/9Ygp95s632cdvdA2PDFPVr2zY+YK+CwPzWvAJ4veLEO1uln37m2pF95Nz2+MKr53IwBa5kA7zH6qR/EjqymULfbHGBClgn1Eq1OybL5Ph4XwHaIc5hUoaJ73zfilsXzePVez+Hh/1/dxlV5DIIAARCUUrY//UzF+ez/Ac7E5c+YeMkLWOnASNiXtdVGPccIQnyiy94n9JpPCwS63vFkzE3+mxUfBip2/pYpbxBUAHGrpTwiOwFF/aQPAMeiaQwouUSIp0D1K9G8fjKCeQlg9EYJ1B3r66YkUvaRNXn0+16BP8timHe9njlfcyjI1bZaRRWsARDhBOqIH2gwW7g1dGv4='
   redis:
     sentinel:
       master: mymaster
-      nodes: localhost:26379  
-      
+      nodes: localhost:26379
+
 memcached:
-  addresses: 192.168.99.100:32770
+  addresses: localhost:11211
 
-ribbon:
-  eureka:
-   enabled: false
-
+cqServerUrl: http://10.224.70.15:9001
+    
 webservice:
   authentication:
-    username: ONLSRVUSER
-    password: usatoday1
+    username: '{cipher}AQAwYIikDQ5MNTGuh9Pe6iOCzGTlYo7WosnOM++cV+n+KPUTyxdmO3HK+3DafiFWxB7xPKDaqqs1E0tOP+X9eeu7a08IUo9Mf3N2kZi7xwu0sF1KBhyoZ6fIs3+PT7tDnJ8ocbDoeGpNKEV9/xxkWO89fiEqvbwBH9EYgqmvurUFYJTYGK/uQ0w3wkjLTpa47kymMTmV4xg//LIRsrlrXVMx4QSYIjVGe+gn17HDaxw5wuHU52HVQonniDoUGeKKW13yOkNNOGJ8Irt4cInvzwTNHfgFXMkMqc5PW0ylBof3dKe1w3bmE1np+JTQ+2Npwwox5xoONDjbyR94P09uywXYFDr/7yyYN3bB/X9sI0bsjRwAiVHt6yEGaSeIk3EUkQo='
+    password: '{cipher}AQBEBucDfZV3FgLWXqMBbGv0Q7Jrw8Usm2SePIO8lJ1vwYHk0o3UHtrHuAG7+y6HL0RoeQtlXaXFHh/MSS7T4IXCc1t+SRQtquT8la1H5kQq/v70qNeAwH6Ef6Q1l6NvHZHSTK8mmo4TF1yOdQPYvd2V2P1JoO94frtlFm9kZ1emwBTCA14ylAkwl+9Kb8j1hKQNHvtSK17Wd6DZW1K4NSxH0Y3l+A1UNxYk9a9SFcEt7doteMnxyk1uQ9w4L3ZTbragCv3Mw8iFuzyD5MjJkBpPhoHsDJ/J+ZGZQ4nNIxWaFT2hq29AwoifVngpLoxkxI9Ke8XdzdqXjZmTl8Du2JWYqtoPyD3N1y/rQsIIATHldm4TwT3Apry/2xeiM0EwBJI='
   personalProjection:
     caller:
-      endpoint: http://tpicxtmqa.uk.centricaplc.com:50000/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryProductTariffsOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AProduct
+      endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryProductTariffsOut&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AProduct
       expiry: 3600
 
-cqRepository:
-  ribbon:
-    listOfServers: 10.224.70.15:9001
-    #listOfServers: 10.224.70.74:9001
+cache:
+  tariffs:
+    expiry: -1
+  quotes:
+    expiry: 3600
 
 server:
-  port: ${port:9080}
+  port: 9092
   servlet-path: /management
-  
+
 eureka:
   instance:
-    metadata-map:
-      instanceId: 1
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
@@ -62,16 +65,3 @@ logging:
     root: INFO
     org.springframework.ws.client.MessageTracing.sent: 'TRACE'
     org.springframework.ws.client.MessageTracing.received: 'TRACE'
-    
----
-
-spring:
-  profiles: integration-test
-  datasource:
-    driverClassName: oracle.jdbc.driver.OracleDriver
-    url: ${jdbc.url:jdbc:oracle:thin:@localhost:49161:xe}
-    username: ${jdbc.username:system}
-    password: ${jdbc.password:oracle}
-    testOnBorrow: true
-    validationQuery: SELECT 1 FROM DUAL
-    maxWait: 1000
