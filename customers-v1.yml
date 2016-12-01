@@ -59,11 +59,13 @@ hystrix:
           thread:
             timeoutInMilliseconds: 30000
 
-logging:
-  level:
-    org.spring: 'INFO'
-    org.apache: 'INFO'
-    ROOT: 'INFO'
+logging.level:
+  root: INFO
+  org.springframework.ws.client.MessageTracing.sent: TRACE
+  org.springframework.ws.client.MessageTracing.received: TRACE
+  org.springframework.ws.client.core: TRACE
+  org.spring: 'INFO'
+  org.apache: 'INFO'
     
 services:
   addresses: addresses-v1
