@@ -23,8 +23,8 @@ services:
 
 webservice:
   authentication:
-    username: ONLSRVUSER
-    password: usatoday1
+#    username: ONLSRVUSER
+#    password: usatoday1
 
 payments.financial.transactions.caller:
   # endpoint: http://193.67.163.82/tpicxtmqa/XISOAPAdapter/MessageServlet?senderParty=Online&senderService=BSR_WebService_PI&receiverParty=&receiverService=&interface=QueryCustomerAccount&interfaceNamespace=urn%3Abritishgas.co.uk%3AEnterprise%3AFinancialTransaction
