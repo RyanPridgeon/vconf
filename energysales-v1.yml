@@ -19,7 +19,7 @@ spring:
 memcached:
   addresses: localhost:11211
 
-cqServerUrl: http://10.224.70.15:9001
+cqServerUrl: http://localhost:51001
 
 webservice:
   authentication:
