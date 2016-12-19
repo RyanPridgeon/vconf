@@ -16,6 +16,9 @@ spring:
       master: mymaster
       nodes: localhost:26379
 
+services:
+  energy: energy-v1
+
 memcached:
   addresses: localhost:11211
 
