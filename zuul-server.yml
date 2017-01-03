@@ -4,29 +4,106 @@ info:
 zuul:
   ignoredServices: '*'
   routes:
-    questionnaires-v1:
-      path: /v1/questions/**
-      stripPrefix: false
-    questionnaires-v1-surveys:
+    surveys-eligibility-v1:
       path: /v1/surveys/**
       serviceId: questionnaires-v1
       stripPrefix: false
-    addresses-v1:
+    surveys-questions-v1:
+      path: /v1/questions/**
+      serviceId: questionnaires-v1
+      stripPrefix: false 
+    addresses-v1: 
       path: /v1/addresses/**
       stripPrefix: false
-    callbacks:
-      path: /callbacks/**
-  cors:
-    /*:
-      allowedOrigins:
-        - www.britishgas.co.uk
-        - www.example.com
+    energysales-tariffs-v1:
+      path: /v1/tariffs/**
+      serviceId: energysales-v1
+      stripPrefix: false
+    energysales-quotes-v1:
+      path: /v1/quotes/**
+      serviceId: energysales-v1
+      stripPrefix: false
+    energysales-quote-items-v1:
+      path: /v1/quote-items/**
+      serviceId: energysales-v1
+      stripPrefix: false
+    energysales-energy-estimates-v1:
+      path: /v1/energy-estimates/**
+      serviceId: energysales-v1
+      stripPrefix: false
+    oam-customer-v1:
+      path: /v1/customers/**
+      serviceId: customers-v1
+      stripPrefix: false
+    oam-premises-v1:
+      path: /v1/premises/**
+      serviceId: customers-v1
+      stripPrefix: false
+    callbacks-v1:
+      path: /v1/callbacks/**
+      serviceId: contact-v1
+      stripPrefix: false
+    contact-leads-v1:
+      path: /v1/contact-leads/**
+      serviceId: contact-v1
+      stripPrefix: false
+    support-categories-v1:
+      path: /v1/support-categories/**
+      serviceId: content-v1
+      stripPrefix: false 
+    support-options-v1:
+      path: /v1/support-options/**
+      serviceId: content-v1
+      stripPrefix: false
+    move-in-leads-v1:
+      path: /v1/move-in-leads/**
+      serviceId: home-move-v1
+      stripPrefix: false
+    energy-accounts-v1:
+      path: /v1/energy-accounts/**
+      serviceId: energy-v1
+      stripPrefix: false
+    frontend-api-v0:
+      path: /frontend-api/v0/**
+      url: http://localhost:3000/
+
+cors:
+  mappings:
+    /**:
+      allowedOrigins: 
+        - https://www.britishgas.co.uk
+        - http://www.britishgas.co.uk
+        - http://193.67.163.110
+        - https://193.67.163.110
+        - http://10.224.70.44
+        - https://10.224.70.44
+        - http://10.224.70.104
+        - https://10.224.70.104
+        - http://193.67.163.23
+        - https://193.67.163.23
+        - http://10.224.70.111
+        - https://10.224.70.111
+        - http://193.67.163.141
+        - https://193.67.163.141
+        - http://10.224.70.50
+        - https://10.224.70.50
+        - http://193.67.160.93
+        - https://193.67.160.93
+        - chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
       allowedMethods:
         - GET
         - POST
+        - PUT
         - PATCH
         - DELETE
-    
+        - OPTIONS
+      allowedHeaders:
+        - Authorization
+        - X-Client-ID
+        - Content-Type
+        - Accept
+        - Apikey
+
 eureka:
   client:
     healthcheck:
@@ -34,16 +111,30 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
+  instance:
+    preferIpAddress: true
+    securePortEnabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
 
 spring:
   rabbitmq:
     addresses: localhost:5672
-
+    username: guest
+    password: guest
+ 
 logging:
   level:
     root: INFO
-    org.springframework.web: INFO
-    info.tcb: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
 
 server:
-  port: ${port:8771} 
+  port: ${port:8771}
