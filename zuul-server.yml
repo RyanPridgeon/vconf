@@ -39,6 +39,10 @@ zuul:
       path: /v1/premises/**
       serviceId: customers-v1
       stripPrefix: false
+    energy-orders-v1:
+      path: /v1/energy-orders/**
+      serviceId: customers-v1
+      stripPrefix: false
     callbacks-v1:
       path: /v1/callbacks/**
       serviceId: contact-v1
