@@ -155,7 +155,7 @@ encryption:
     seed: '{cipher}AQBrOvQBzxAYqcd3qR+kOav5hi7W0ITVUZAP4HcmuC8cZR26YawdWNSZxrJz8DYgTUzmgeuEmV2nJr07GltNal/hpOtz+mKUEfwxKuREOWBeDl9POCPrOgU8yt09S2qhSFkHwwfdhFVddULwjJmZxzfvzCF8SHG8/qI7YwpEg+gzT83WAxyY98leVyq+o/IrFXgD7qY2ZfPCFVWOvj/MMKoXPXyg/UMNVwiFDdzYYzPy6upGeOkU3l7/vYlGJdifFihqw3+Q3qm3yoUrhcgJOAdssidd0ZW2zPDrY2fdXZuqvY3jZf/mu7sNQJ4EuVTHcB/wOfuIQqGFlU1D+yHS9kiskpKtyTHUtRFip0XHKVw9QvKzVjAtrXCyVHZCn4UbLvE='
 
 server:
-  port: 9010
+  port: 9020
   ssl:
     enabled: true
     key-store: ${ssl.keystore:classpath:keystore.jks}
