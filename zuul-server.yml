@@ -59,6 +59,14 @@ zuul:
       path: /v1/support-options/**
       serviceId: content-v1
       stripPrefix: false
+    payment-transactions-v1:
+      path: /v1/payment-transactions/**
+      serviceId: payments-v1
+      stripPrefix: false
+    bills-v1:
+      path: /v1/bills/**
+      serviceId: payments-v1
+      stripPrefix: false
     move-in-leads-v1:
       path: /v1/move-in-leads/**
       serviceId: home-move-v1
