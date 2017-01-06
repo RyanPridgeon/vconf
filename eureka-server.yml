@@ -10,6 +10,9 @@ eureka:
     fetchRegistry: false
   instance:
     hostname: localhost
+    securePort: ${server.port}
+    securePortEnabled: true  
+    nonSecurePortEnabled: false 
 
 spring:
   rabbitmq:
