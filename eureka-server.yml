@@ -8,6 +8,7 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    securePortEnabled: true
   instance:
     hostname: localhost
     securePort: ${server.port}
