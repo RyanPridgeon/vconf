@@ -32,7 +32,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: https://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     registry-fetch-interval-seconds: 5
 
 logging:
